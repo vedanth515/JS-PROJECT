@@ -16,7 +16,7 @@ signUp.addEventListener("submit", (v) => {
     let emailValue = email.value.trim()
     let passwordValue = password.value.trim()
     let Conformpassword1 = Conformpassword.value.trim()
-    // console.log(nameValue);
+    console.log(nameValue);
 
     let isValid = true;
 
@@ -78,23 +78,22 @@ signUp.addEventListener("submit", (v) => {
         email.value = ""
         password.value = ""
         Conformpassword.value = ""
-        
-        let allusers=JSON.parse(localStorage.getItem("users")) || [];
 
-        allusers.push({name:nameValue,email:emailValue,password:passwordValue,Conformpassword:Conformpassword1})
+        let allusers = JSON.parse(localStorage.getItem("users")) || [];
 
-       localStorage.setItem("users",JSON.stringify(allusers))
-       Swal.fire({
-        title: "signedup successfully",
-        icon: "success",
-        draggable: true
-      }).then(()=>{
-   location.href="./login.html"
-      })
-        
-     
+        allusers.push({ name: nameValue, email: emailValue, password: passwordValue, Conformpassword: Conformpassword1 })
+
+        localStorage.setItem("users", JSON.stringify(allusers))
+        Swal.fire({
+            title: "signedup successfully",
+            icon: "success",
+            draggable: true
+        }).then(() => {
+            location.href ="../login/login.html"
+        })
+
+
     };
-
 
 });
 

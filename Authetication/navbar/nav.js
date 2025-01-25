@@ -1,6 +1,5 @@
 
 
-
 let signUpbtn=document.getElementById("signup")
 
 signUpbtn.addEventListener("click",()=>{
@@ -12,4 +11,9 @@ let loginbtn=document.getElementById("login")
 
 loginbtn.addEventListener("click",()=>{
     location.href="../login/login.html"
-})
+});
+
+
+
+
+

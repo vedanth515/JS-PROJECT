@@ -11,9 +11,9 @@ login.addEventListener("submit", async (k) => {
     let storgeCrenerials = JSON.parse(localStorage.getItem("users"));
     console.log(storgeCrenerials);
 
-    let user = storgeCrenerials.filter(x => {
-        return x.email === emailValue && x.password === passwordValue
-    })
+    let user = storgeCrenerials.find(x => {
+        return x.email === emailValue && x.password === passwordValue;
+    });
 
     if (user) {
         // alert("Successfully logined")
@@ -22,11 +22,12 @@ login.addEventListener("submit", async (k) => {
             icon: "success",
             draggable: true
           }).then(()=>{
-            location.href="./home.html"
+           location.href="../navbar/nav.html"
           })
 
     } else {
         alert("user not found")
     }
+
 
 });
